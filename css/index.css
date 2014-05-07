@@ -1,0 +1,417 @@
+body {
+	background-color: orange;
+	min-width: 1000px;
+}
+
+.aCat {
+	color: orange;
+	font-size: 50px;
+	font-family: "Impact";
+	text-decoration: none;
+	transition: color 1s ease-in;
+	-o-transition: color 1s ease-in;
+	-ms-transition: color 1s ease-in;
+	-moz-transition: color 1s ease-in;
+	-webkit-transition: color 1s ease-in;
+}
+
+div#wrapper {
+	overflow: hidden;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	min-width: 1000px;
+	min-height: 600px;
+	top: 50px;
+	background-color: transparent;
+	min-width: 1000px;
+	width: 50%;
+	position: relative;
+}
+
+div#patternenv {
+	position: absolute;
+	top: 115px;
+	left: -10px;
+}
+
+div#top {
+	position: absolute;
+	color: orange;
+	width: 1000px;
+	background-color: white;
+	height: 100px;
+	font-family: "Impact";
+	-moz-border-radius-topleft: 75px;
+	-webkit-border-top-left-radius: 75px;
+	border-top-left-radius: 75px;
+	-moz-border-radius-topright: 75px;
+	-webkit-border-top-right-radius: 75px;
+	border-top-right-radius: 75px;
+}
+
+div#smallwrapper {
+	display: inline-block;
+}
+
+div#lefttop {
+	background-color: transparent;
+	display: inline-block;
+	font-size: 100px;
+	padding-left: 5px;
+}
+
+div#smallerupper {
+	background-color: transparent;
+	font-size: 39px;
+}
+
+div#smallerdowner {
+	background-color: transparent;
+	font-size: 38px;
+}
+
+.pattern {
+	z-index:10;
+	color: transparent;
+	background-color: white;
+	width: 450px;
+	height: 200px;
+	font-family: "Helvetica";
+	font-size: 25px;
+	margin-top: 25px;
+	margin-left: 33px;
+	padding-left: 8px;
+	padding-top: 7px;
+	position: absolute;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+	
+}
+
+div#p1:target {
+	width: 941px;
+	height: 432px;
+	z-index: 10000;
+}
+
+div#p1:target>#innermember {
+	color: orange;
+	visibility:visible;
+}
+
+div#p1:target>#innermember>.inmember>.filelinks {
+	color: orange;
+	visibility:visible;
+}
+
+div#p1:target>#innermember>.revealemail>.filelinks {
+	color: orange;
+	visibility:visible;
+}
+
+div#p1:target>#innermember>.turn{
+	opacity:1;
+	transform: rotateX(0);
+	-webkit-transform: rotateX(0); /** Chrome & Safari **/
+	-moz-transform: rotateX(0); /** Firefox **/
+	-o-transform: rotateX(0); /** Opera **/
+}
+
+div#p3:target>#innerinfos>.turn{
+	opacity:1;
+	transform: rotateX(0);
+	-webkit-transform: rotateX(0); /** Chrome & Safari **/
+	-moz-transform: rotateX(0); /** Firefox **/
+	-o-transform: rotateX(0); /** Opera **/
+}
+
+div#p2:target>#innerproject>.turn{
+	opacity:1;
+	transform: rotateX(0);
+	-webkit-transform: rotateX(0); /** Chrome & Safari **/
+	-moz-transform: rotateX(0); /** Firefox **/
+	-o-transform: rotateX(0); /** Opera **/
+}
+
+div#p4:target>#innerfiles>.turn{
+	opacity:1;
+	transform: rotateX(0);
+	-webkit-transform: rotateX(0); /** Chrome & Safari **/
+	-moz-transform: rotateX(0); /** Firefox **/
+	-o-transform: rotateX(0); /** Opera **/
+}
+
+.toobig{
+	margin-top:10px;
+	width:100%;
+	height:380px;
+	overflow-y:scroll;
+}
+
+.turn{
+	opacity:0;
+		transform: rotateX(-180deg);
+	-webkit-transform: rotateX(-180deg); /** Chrome & Safari **/
+	-moz-transform: rotateX(-180deg); /** Firefox **/
+	-o-transform: rotateX(-180deg); /** Opera **/
+		transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out;
+}
+
+div#members:target {
+	color: orange;
+	visibility:visible;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg); /** Chrome & Safari **/
+	-o-transform: rotateY(180deg); /** Opera **/
+	-moz-transform: rotateY(180deg);
+	transform: rotateX(180deg); /** Firefox **/
+}
+
+div#p2:target {
+	width: 941px;
+	height: 432px;
+	z-index: 10000;
+	transform: translate(-491px, 0);
+	-webkit-transform: translate(-491px, 0); /** Chrome & Safari **/
+	-o-transform: translate(-491px, 0); /** Opera **/
+	-moz-transform: translate(-491px, 0);
+	transform: translate(-491px, 0); /** Firefox **/
+}
+
+div#p2:target>#innerproject {
+	color: orange;
+	visibility:visible;
+}
+
+div#p2:target>#innerfiles>.innerproject>.filelinks {
+	color: orange;
+	visibility:visible;
+}
+
+div#p3:target {
+	width: 941px;
+	height: 432px;
+	z-index: 10000;
+	transform: translate(0, -232px);
+	-webkit-transform: translate(0, -232px); /** Chrome & Safari **/
+	-o-transform: translate(0, -232px); /** Opera **/
+	-moz-transform: translate(0, -232px); /** Firefox **/
+}
+
+div#p3:target>#innerinfos {
+	color: orange;
+	visibility:visible;
+}
+
+div#p3:target>#innerinfos>.inmember>.filelinks {
+	color: orange;
+	visibility:visible;
+}
+
+div#p4:target {
+	width: 941px;
+	height: 432px;
+	z-index: 10000;
+	transform: translate(-491px, -232px);
+	-webkit-transform: translate(-491px, -232px); /** Chrome & Safari **/
+	-o-transform: translate(-491px, -232px); /** Opera **/
+	-moz-transform: translate(-491px, -232px); /** Firefox **/
+}
+
+div#p4:target>#innerfiles {
+	color: orange;
+	visibility:visible;
+}
+
+div#p4:target>#innerfiles>.inmember>.filelinks {
+	color: orange;
+	visibility:visible;
+}
+
+div#p1 {
+	overflow: hidden;
+	-moz-border-radius-bottomright: 40px;
+	-webkit-border-bottom-right-radius: 40px;
+	border-bottom-right-radius: 40px;
+}
+
+div#p2 {
+	overflow: hidden;
+	left: 491px;
+	-moz-border-radius-bottomleft: 40px;
+	-webkit-border-bottom-left-radius: 40px;
+	border-bottom-left-radius: 40px;
+}
+
+div#p3 {
+	overflow: hidden;
+	top: 232px;
+	-moz-border-radius-topright: 40px;
+	-webkit-border-top-right-radius: 40px;
+	border-top-right-radius: 40px;
+}
+
+div#p4 {
+	overflow: hidden;
+	top: 232px;
+	left: 491px;
+	-moz-border-radius-toplfet: 40px;
+	-webkit-border-top-left-radius: 40px;
+	border-top-left-radius: 40px;
+}
+
+div#innermember {
+	overflow: hidden;
+	background-color: transparent;
+	position: absolute;
+	color: transparent;
+	visibility:hidden;
+	margin-left: 25px;
+	margin-top: -10px;
+	width: 1000px;
+	height: 1000px;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out;
+	background-color: transparent;
+	margin-left: 25px; /** Opera **/
+}
+
+div#innerproject {
+	overflow: hidden;
+	background-color: transparent;
+	position: absolute;
+	color: transparent;
+	visibility:hidden;
+	margin-left: 25px;
+	margin-top: -10px;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+}
+
+div#innerinfos {
+	overflow: hidden;
+	background-color: transparent;
+	position: absolute;
+	color: transparent;
+	visibility:hidden;
+	margin-left: 25px;
+	margin-top: -10px;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+}
+
+div#innerfiles {
+	overflow: hidden;
+	background-color: transparent;
+	position: absolute;
+	color: transparent;
+	visibility:hidden;
+	margin-left: 25px;
+	margin-top: -10px; transition : all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out; /** Opera **/
+}
+
+.revealemail {
+	margin-top: 10px;
+	margin-left: 50px;
+	font-size: 20px;
+}
+
+.inmember {
+	margin-top: 30px;
+}
+
+.close {
+	top: 0;
+	left: 911px;
+	position: absolute;
+}
+
+.filelinks:VISITED{
+	color: orange;
+}
+
+#membertable{
+	color: orange;
+	font-family: "Trebuchet MS";
+	margin-top: 30px;
+	padding-left: 25px;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+}
+
+#filetable{
+	color: orange;
+	font-family: "Trebuchet MS";
+	margin-top: 30px;
+	padding-left: 25px;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+}
+
+#milestonestable{
+	color: orange;
+	font-family: "Trebuchet MS";
+	margin-top: 30px;
+	padding-left: 25px;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+}
+
+.without{
+	font-size: 20px;
+}
+
+.miledate{
+	width:150px;
+}
+
+tr{
+	border-bottom: 11px solid white;
+}
+
+.column{
+	color: orange;
+	font-size: 35px;
+	font-family: "Impact";
+}
+
+td{
+	border-right: 60px solid white;
+}
+
+div#abstract{
+	position: relative;
+	margin-top:25px;
+}
+
+.filelinks {
+	color: orange;
+	text-decoration: none;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1s ease-in-out; /** Firefox **/
+	-o-transition: all 1s ease-in-out; /** Opera **/
+}

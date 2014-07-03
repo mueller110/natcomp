@@ -12,6 +12,9 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
+% added this package solely because "our" title is way too long and it
+% allows to add a line break in the title
+%\usepackage[usestackEOL]{stackengine}
 
 \textheight 680pt
 \textwidth 460pt
@@ -41,11 +44,13 @@
 %\hline
 \vspace{2cm}
 
-\centerline{\large{PS Robotik}}
-\centerline{WS 06/07}
+\centerline{\large{PS Natural Computation}}
+\centerline{SS 13/14}
 \vspace{1cm}
 
-\centerline{\Large{\bf{Title}} }%Type of the Document
+\centerline{\Large{Design and implementation of a robot task}}
+%\centerline{\Large{\bf\Longstack{SIMMA\\Design and implementation of a robot task\\demonstration the effect of
+%neuromodulators}} }%Type of the Document
 \vspace{1cm}
 
 \vspace{0.4cm}%Date
@@ -55,15 +60,16 @@
 %\hline
 \vspace{0.2cm}
 Project Members:\\
-\centerline{Name, ID, Email}\\
-\centerline{Name, ID, Email}\\
-\centerline{\ldots}
-\vspace {1cm}\\
+\centerline{Auinger, 1220321, auingerto@stud.sbg.ac.at}\\
+\centerline{M\"{u}ller, 1123410, mueller110@gmx.net}\\
+\centerline{Pollhammer, 9520061, pollhammerand@stud.sbg.ac.at}\\
+\centerline{Schwarz, 1220024, schwarzst@stud.sbg.ac.at}\\
+\vspace {0.8cm}\\
 
 Academic Supervisor: \\
 \centerline{Helmut MAYER}
 \centerline{helmut@cosy.sbg.ac.at}
-\vspace{1.5cm}\\
+\vspace{0.8cm}\\
 Correspondence to: \\
 \centerline{Universit\"{a}t Salzburg} \\
 \centerline{Fachbereich Computerwissenschaften} \\
@@ -73,6 +79,9 @@ Correspondence to: \\
 \clearpage
 \end{titlepage}
 
+
+
+%%%
 %Table of Content
 % \setcounter{page}{1}
 % \pagenumbering{Roman} %I,II,III... in the TOC
@@ -85,59 +94,30 @@ Correspondence to: \\
 \pagenumbering{arabic}  %Better if TOC is variable (more than one page)
 \setcounter{page}{1}
 
-\abstract{Here comes the abstract.}
+\abstract
+{The main goal of this project is designing a task that demonstrates that the usage of neuromodulators can influence the evolution of a neural network in a positive way. For implementation and simulation of the task we use SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour".}
 
+%%%
 \section{Introduction}
-
+In this class our team of four people design a task for neural networks.  The main goal is to demonstrate that the usage of neuromodulators can influence the evolution of a neural network in a positive way. After careful considerations we decided to implement a robot whose task it is to take several pegs to a certain place. By pushing the pegs to the certain place the robot has to avoid some enemies. If the robot is captured by an enemy, he will get penalty seconds. The robot will learn this task by means of neural networks.  We hope that neuromodulators will influence the evolution of our neural network in a positive way. So the neuromodulators assist our robot by learning this task. For implementation and simulation of the task we use SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour".
 \newpage
 
-\section{Milestones} % NOT in final paper
-\begin{itemize}
-\item{Due date:}
-\end{itemize}
-
-\newpage
-
-\section{Progress of Work} % NOT in final paper
-
-\subsection{Week 1, Tuesday, 18.10.2005}
-
-\subsection{Week 2, Tuesday, 25.10.2005}
-
-\subsection{Week 3, Tuesday, 08.11.2004}
-
-\subsection{Week 4, Tuesday, 22.11.2005}
-
-\subsection{Week 5, Tuesday, 29.11.2005}
-
-\subsection{Week 6, Tuesday, 06.12.2005}
-
-\subsection{Week 7, Tuesday, 13.12.2005}
-
-\subsection{Week 8, Tuesday, 20.12.2005}
-
-\subsection{Week 9, Tuesday, 10.01.2006}
-
-\subsection{Week 10, Tuesday, 17.01.2006}
-
-\subsection{Week 11, Tuesday, 24.01.2006}
-
-\newpage
-
-\section{Subproject Responsibilities} % NOT in final paper
-\newpage
 
 % links go here, NOT in references
 
+%%%
 \section{Links}
 
 \begin{itemize}
-\item Project Page: \url{http://student.cosy.sbg.ac.at/???}
-\item PS Page:
-\url{http://www.cosy.sbg.ac.at/~helmut/Teaching/PSRobotik/}
-
+	\item Project Page: \url{http://student.cosy.sbg.ac.at/~cmueller/natcomp/}
+	\item PS Page:	\url{http://www.cosy.sbg.ac.at/~helmut/Teaching/NaturalComputation/proseminar.html}
 \end{itemize}
 
 \bibliography{}		% .bib files here
 
+
+
+%
+% end of document
+%
 \end{document}

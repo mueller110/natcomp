@@ -148,12 +148,17 @@ Correspondence to: \\
 
 %%%
 \section{Introduction}
-In this class our team of four people design a task for neural networks.  The main goal is to demonstrate that the usage of neuromodulators can influence the evolution of a neural network in a positive way. After careful considerations we decided to implement a robot whose task it is to take several pegs to a certain place. By delivering the pegs to the certain place the robot has to avoid an enemy. If the robot is captured by the enemy, he will get damage, which effects its speed. The robot will learn this task by means of neural networks.  We hope that neuromodulators will influence the evolution of our neural network in a positive way. So the neuromodulators assist our robot by learning this task. For implementation and simulation of the task we use SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour".
+In this class our team of four people designed a task for neural networks.  The main goal was to demonstrate that the usage of neuromodulators can influence the evolution of a neural network in a positive way.
+
+\subsection{The initial task}
+After careful considerations we decided to implement a robot whose task is to collect several pegs, which are randomly distributed within a virtual rectangular world and transport them to a certain place we call spot. While transporting the pegs to the spot the robot has to avoid collisions with one or more enemies following the robot. If the robot is captured by the enemy, it will get some damage, which effects its speed. The robot is supposed to learn this task by means of evolving neural networks. Our hope was that neuromodulators will indeed influence the evolution of our neural network in a positive way. So the neuromodulators assist our robot by learning this task. For implementation and simulation of the task we used SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour".
+
+After several tests it turned out, that one part of the task worked very well. Namely the finding and collecting of the pegs, which includes the delivery to the spot. But to our disappointment robots trained to find and collect pegs, seamed to be unable to also learn how to avoid collisions with ghosts. So we focused on the second part of the task, the transportation of pegs through the enemy region.
 
 \subsection{Neuromodulation}
 Neuromodulation basically describes a mechanism, which allows a neuron to switch between different states. There are different approaches how this may work in nature and also how neuromodulators are implemented in different variants of ANNs. In our case the mentioned states of the neuron are associated with a change of bias, the neurons output. In general, it is a complex problem, to find out in which cases bias changes would have a positive effect. So we simply left this to evolution.
 
-For our project, we have defined one neuromodulator using the SIMMA class \texttt{simma.ann.modulator.BiasChange}. As Brain we selected the also already existing class \texttt{simma.ann.NeuroFeedForwardController}. See appendix for a complete listing (xml) of our setup.
+For our project, we defined one neuromodulator using the SIMMA class\\ \texttt{simma.ann.modulator.BiasChange}. As Brain we selected the also already existing class \texttt{simma.ann.NeuroFeedForwardController}. See appendix for a complete listing (xml) of our setup.
 
 
 \section{SIMMA}

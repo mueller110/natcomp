@@ -178,6 +178,10 @@ SIMMA (Simulator for EMMA) is ...
 
 \subsection{The Fitness Funciton}
 
+\subsubsection{Considerations on how to improve the robots performance}
+
+When watching the robots movements, it sometimes seams that the robot fails to avoid a collision with the ghost, because there is not enough space within the rectangular world. This happens when the robot tries to gain distance from the ghost while driving against a wall (outer border of the robots world). We concluded, that this could possibly hinder the robot within its learning process, since that there is no way for the robot to even recognize the existence of a wall, besides the fact, that the distance to the ghost does not rise as is should. But the robot could not determine, whether if this is a wall-problem, or the ghost is just faster than the robot. In the either case it should turn around without the need of dropping any pegs. And in the other case it should do just the opposite and drop some pegs. So being aware of this problem, we added the damage-sensor, which we already implemented for our previous task and used it to subtract one damage-point every time the robot collides with the wall. Additionally we added the compass (an existing sensor class in SIMMA) to give the Robot some kind of orientation. By also taking regard of the damage value within the fitness-function, we had been looking forward to evolve a robot which is learning to keep a little distance form the borders of the simulated world. This worked very well as long as we made it easy for the robot to solve the task, meaning a slow moving ghost with only low aggression potential. But with a higher degree of difficulty of the robots task, we were not able to identify any significant improvements. It seemed that the additional sensors just added complexity to the learning process without increasing the level of the reachable fitness. So we returned to our initial keep-it-simple approach.
+
 \section{Results}
 
 \section{Conclusion}

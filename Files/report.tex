@@ -106,10 +106,10 @@
 %\hline
 \vspace{0.2cm}
 Project Members:\\
-\centerline{Auinger, 1220321, auingerto@stud.sbg.ac.at}\\
-\centerline{M\"{u}ller, 1123410, mueller110@gmx.net}\\
-\centerline{Pollhammer, 9520061, pollhammerand@stud.sbg.ac.at}\\
-\centerline{Schwarz, 1220024, schwarzst@stud.sbg.ac.at}\\
+\centerline{Tobias Auinger, 1220321, auingerto@stud.sbg.ac.at}\\
+\centerline{Christian M\"{u}ller, 1123410, mueller110@gmx.net}\\
+\centerline{Andreas Pollhammer, 9520061, pollhammerand@stud.sbg.ac.at}\\
+\centerline{Stefan Schwarz, 1220024, schwarzst@stud.sbg.ac.at}\\
 \vspace {0.8cm}\\
 
 Academic Supervisor: \\
@@ -150,13 +150,18 @@ Correspondence to: \\
 \section{Introduction}
 In this class our team of four people designed a task for neural networks.  The main goal was to demonstrate that the usage of neuromodulators can influence the evolution of a neural network in a positive way.
 
+\subsection{SIMMA}
 
+\section{Theoretical Foundation}
 \subsection{Neuromodulation}
 Neuromodulation basically describes a mechanism, which allows a neuron to switch between different states. There are different approaches how this may work in nature and also how neuromodulators are implemented in different variants of ANNs. In our case the mentioned states of the neuron are associated with a change of bias, the neurons output. In general, it is a complex problem, to find out in which cases bias changes would have a positive effect. So we simply left this to evolution.
 
 For our project, we defined one neuromodulator using the SIMMA class\\ \texttt{simma.ann.modulator.BiasChange}. As Brain we selected the also already existing class \texttt{simma.ann.NeuroModulatorController}. See appendix for a complete listing (xml) of our setup.
+In order to get the desired input-output mapping our neural network must be trained.
+For that purpose Simma uses evolutionary Algorithms. Evolutionary Algorithms are algorithms that try to implement the principles of darwinian evolution with the purpose of training a neural network. The controller of our robot is such a neural network. 
+A neural network consists of so called neurons. Each neuron recieves one or more Inputs. The output of is calculated by taking the sum of inputs as an input fot the so called activation function.
 
-\subsection{SIMMA}
+
 
 \section{Components}
 
@@ -175,7 +180,7 @@ The carried load is managed by Nine "smell sensors", which are attached around t
 
 \subsection{The Enemy}
 
-\section{The task}
+\section{The Task}
 
 \subsection{The initial task}
 After careful considerations we decided to implement a robot whose task is to collect several pegs, which are randomly distributed within a virtual rectangular world and transport them to a certain place we call spot. While transporting the pegs to the spot the robot has to avoid collisions with one or more enemies following the robot. If the robot is captured by the enemy, it will get some damage, which effects its speed. The robot is supposed to learn this task by means of evolving neural networks. Our hope was that neuromodulators will indeed influence the evolution of our neural network in a positive way. So the neuromodulators assist our robot by learning this task. For implementation and simulation of the task we used SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour".

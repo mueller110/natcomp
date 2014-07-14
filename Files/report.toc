@@ -17,8 +17,8 @@
 \contentsline {subsection}{\numberline {4.3}The Spot}{6}
 \contentsline {section}{\numberline {5}Results}{6}
 \contentsline {subsection}{\numberline {5.1}Evolution}{6}
-\contentsline {subsection}{\numberline {5.2}Performance}{6}
-\contentsline {section}{\numberline {6}Conclusion}{6}
-\contentsline {section}{\numberline {7}Links}{7}
-\contentsline {section}{\numberline {8}Appendix}{7}
-\contentsline {subsection}{\numberline {8.1}XML-Listing}{7}
+\contentsline {subsection}{\numberline {5.2}Performance}{7}
+\contentsline {section}{\numberline {6}Conclusion}{7}
+\contentsline {section}{\numberline {7}Problems}{7}
+\contentsline {section}{\numberline {8}Links}{8}
+\contentsline {section}{\numberline {9}Appendix}{8}

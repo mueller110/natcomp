@@ -150,12 +150,19 @@ Correspondence to: \\
 
 %%%
 \section{Introduction}
-In this class our team of four people designed a task for neural networks.  The main goal was to demonstrate that the usage of neuromodulators can influence the evolution of a neural network in a positive way.
+Our team, consisting of four people, designed a task for neural networks.  The main goal was to demonstrate that the usage of neuromodulators can influence the evolution of a neural network in a positive way.
+In order to get the desired input-output mapping our neural network must be trained.
+For that purpose Simma uses evolutionary Algorithms, which are algorithms that try to implement the principles of darwinian evolution with the purpose of training an artificial neural network. An artificial neural network consists of a set of neurons and each neuron receives one or more inputs. The sum of inputs is then passed to the activation function and further to the another neuron, until an output neuron is activated.
+%A neural network consists of so called neurons. Each neuron recieves one or more Inputs. The %output of is calculated by taking the sum of inputs as an input fot the so called activation %function.
 
-\begin{center}
+\begin{figure}[h]
+\centering
 \includegraphics[scale=0.3]{img/neuron.png}
-\end{center}
+\caption{A neuron.}
+\label{fig:neuron}
+\end{figure}
 
+In figure \ref{fig:neuron} 
 
 \subsection{SIMMA}
 
@@ -164,11 +171,6 @@ In this class our team of four people designed a task for neural networks.  The 
 Neuromodulation basically describes a mechanism, which allows a neuron to switch between different states. There are different approaches how this may work in nature and also how neuromodulators are implemented in different variants of ANNs. In our case the mentioned states of the neuron are associated with a change of bias, the neurons output. In general, it is a complex problem, to find out in which cases bias changes would have a positive effect. So we simply left this to evolution.
 
 For our project, we defined one neuromodulator using the SIMMA class\\ \texttt{simma.ann.modulator.BiasChange}. As Brain we selected the also already existing class \texttt{simma.ann.NeuroModulatorController}. See appendix for a complete listing (xml) of our setup.
-In order to get the desired input-output mapping our neural network must be trained.
-For that purpose Simma uses evolutionary Algorithms. Evolutionary Algorithms are algorithms that try to implement the principles of darwinian evolution with the purpose of training a neural network. The controller of our robot is such a neural network.
-A neural network consists of so called neurons. Each neuron recieves one or more Inputs. The output of is calculated by taking the sum of inputs as an input fot the so called activation function.
-
-
 
 \section{The Task}
 
@@ -185,9 +187,9 @@ starting position. Right between those regions, the enemy, named ghost, spawns. 
 \subsection{The Fitness Function}
 After putting a lot of thoughts in to the fitness function, we decided to evaluate with the following criteria:
 \[ fitness = \frac{\sum_{i=0}^{episodecount} (bonus_i + load_i)*Aggressionpotential_i}{episodecount} \]
-
+Reaching the spot is the most important role in this task, and that is the reason why we chose to reward the robot with a bonus. In addition to the bonus, the more load the robot is delivering, the better the fitness will be, because it should not drop pegs if there is no need to do so.
 If the robot did not manage to reach the spot, the fitness will be 0 for its current episode. 
-In contrast to our expectations, prior to the testing of our task, the amount of bonus the robot gets just for reaching the spot is of a fundamental importance. If it is too low the robot will not drop it's pegs. For the individual itself this behaviour may result in death, but the missing survival bonus does not influence the population's fitness significantly. If it is too high the robot drops too many pegs. Some may argue that the above statements are false because of the nature of a bonus. 
+In contrast to our expectations, prior to the testing of our task, the amount of bonus the robot gets just for reaching the spot is of a fundamental importance. If it is too low the robot will not drop it's pegs. For the individual itself this behaviour may result in death, but the missing survival bonus does not influence the population's fitness significantly. If it is too high the robot drops too many pegs. Some may argue that the above statements are false, because of the nature of a bonus. 
 The survival bonus is, as its name implies, just a bonus the robot gets on top of its regular performance.
 
 
@@ -203,10 +205,12 @@ To simulate our task we need an area limiting the space, a robot, the delivery d
 The circle-shaped robot powered by a battery is our protagonist, which will be evolved to fulfill a certain task. It is able to move around the simulation area using its two wheels. 
 %An important factor of the perfomance is the speed. It is influenced by the carried amount of %load, making a fully loaded robot slower and therefore easier to catch.
 
-\begin{center}
-\includegraphics[scale=0.333]{img/robot.png}
-\end{center}
-
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.333]{img/robot_neu.png}
+\caption{The robot with its sensors and wheels.}
+\label{fig:robot}
+\end{figure}
 
 \subsubsection{Sensors}
 The robot is equipped with the following sensors:
@@ -221,12 +225,17 @@ The carried load is managed by nine "smell sensors", which are attached around t
 After a collision has been detected between the ghost and the robot, the robot is harmed, the robot's capability of movement is declined and therefore the robot failed its task, resulting in a fitness of 0.
 
 \subsubsection{Actuator}
-
+We extended the already existing class "TwoWheelDrive" with a third neuron. Originally there were two neurons: one for the right wheel and one for the left wheel. Our third neuron is the "peg-dropper-neuron". If the value of the neuron is greater than 0.5 the robot drops a certain amount of pegs, which lightens the robot, causing it to speed up.
 
 \subsection{The Enemy}
-%\includegraphics[scale=0.5]{img/ghost.png}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{img/ghost.png}
+\caption{The robot's enemy, named ghost.}
+\label{fig:ghost}
+\end{figure}
 
-The Enemy, called ghost is represented in SIMMA by a white circle. We therfore implemented a class called \texttt{Ghost} for which the following settings can be made in the configuration-file: The speed of the ghost can be set by a tag called \texttt{Speed} with properties \texttt{VX} and \texttt{VY} for the speed in direction of the x-axis or y-axis resepctively. The settings for \texttt{MoveArea} were intended to capture the ghost within a given aria, but are not used at current.
+The Enemy, called ghost is represented in SIMMA by a white circle. We therfore implemented a class called \texttt{Ghost}, for which the following settings can be made in the configuration-file: The speed of the ghost can be set by a tag called \texttt{Speed} with properties \texttt{VX} and \texttt{VY} for the speed in direction of the x-axis or y-axis resepctively. The settings for \texttt{MoveArea} were intended to capture the ghost within a given aria, but are not used at current.
 
 \subsection{The Spot}
 The spot, being the delivery destination, is emitting smell in every direction of the simulation space, making it recognizeable and distinguishable from the ghost. It also serves the purpose as a safe zone for the robot.
@@ -235,13 +244,25 @@ The spot, being the delivery destination, is emitting smell in every direction o
 For the results we evolved two robots, distuingished by the usage of neuromodulators and therefore a different brain. Despite of that, everything had to be equivalent for the comparision of those robots.
 
 \subsection{Evolution}
-asdf
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[scale=0.3]{img/asdf.png}
+%\caption{asdf}
+%\label{fig:asdf}
+%\end{figure}
 
 \subsection{Performance}
-asf
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[scale=0.3]{img/asddf.png}
+%\caption{asddf}
+%\label{fig:asddf}
+%\end{figure}
 
 \section{Conclusion}
-By evolving and comparing the two robots with our implemented task we noticed a positive influence not only in performance, but also in the evolution.
+By evolving and comparing those two robots with our implemented task, we noticed a positive influence not only in performance, but also in the evolution, as we hoped to achieve.
 
 \newpage
 % links go here, NOT in references

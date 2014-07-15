@@ -175,7 +175,7 @@ For our project, we defined one neuromodulator using the SIMMA class\\ \texttt{s
 \section{The Task}
 
 \subsection{The initial task}
-After careful considerations we decided to implement a robot whose task is to collect several pegs, which are randomly distributed within a virtual rectangular world and transport them to a certain place we call spot. While transporting the pegs to the spot the robot has to avoid collisions with one or more enemies following the robot. If the robot is captured by the enemy, it will get some damage, which effects its speed. The robot is supposed to learn this task by means of evolving neural networks. Our hope was that neuromodulators will indeed influence the evolution of our neural network in a positive way. So the neuromodulators assist our robot by learning this task. For implementation and simulation of the task we used SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour". ZITAT !!
+After careful considerations we decided to implement a robot whose task is to collect several pegs, which are randomly distributed within a virtual rectangular world and transport them to a certain place we call spot. While transporting the pegs to the spot the robot has to avoid collisions with one or more enemies following the robot. If the robot is captured by the enemy, it will get some damage, which effects its speed. The robot is supposed to learn this task by means of evolving neural networks. Our hope was that neuromodulators will indeed influence the evolution of our neural network in a positive way. So the neuromodulators assist our robot by learning this task. For implementation and simulation of the task we used SIMMA "a simulation framework mainly developed for the simulation of mobile autonomous robots and their behaviour". 
 
 After several tests it turned out, that one part of the task worked very well. Namely the finding and collecting of the pegs, which includes the delivery to the spot. But to our disappointment robots trained to find and collect pegs, seemed to be unable to also learn how to avoid collisions with ghosts. So we focused on the second part of the task, the transportation of pegs through the enemy region.
 
@@ -228,12 +228,6 @@ After a collision has been detected between the ghost and the robot, the robot i
 We extended the already existing class "TwoWheelDrive" with a third neuron. Originally there were two neurons: one for the right wheel and one for the left wheel. Our third neuron is the "peg-dropper-neuron". If the value of the neuron is greater than 0.5 the robot drops a certain amount of pegs, which lightens the robot, causing it to speed up.
 
 \subsection{The Enemy}
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.3]{img/ghost.png}
-\caption{The robot's enemy, named ghost.}
-\label{fig:ghost}
-\end{figure}
 
 The Enemy, called ghost is represented in SIMMA by a white circle. We therefore implemented a class called \texttt{Ghost}, for which the following settings can be made in the configuration-file: The speed of the ghost can be set by a tag called \texttt{Speed} with properties \texttt{VX} and \texttt{VY} for the speed in direction of the x-axis or y-axis respectively. The settings for \texttt{MoveArea} were intended to capture the ghost within a given aria, but are not used at current. Its one and only purpose is to hunt down the robot, making him unable to fulfill the delivery.
 
@@ -242,18 +236,16 @@ The spot, being the delivery destination, is emitting smell in every direction o
 
 \section{Results}
 For the results we evolved two robots, distinguished by the usage of neuromodulators and therefore a different brain. Despite of that, everything had to be equivalent for the comparison of those robots.
+\newpage
 
 \subsection{Evolution}
-The following diagram (figure \ref{fig:diagram1.png}) shows the evolution progress of both alternatives, with and without neuromodulators. Both have been evolved over XXX generations with/without a bonus. The ghost's speed has been set to 0.0XX (both X and Y). As aggression potential we took a random value from the range of 0.3 to 0.8 for each episode. Our episode-count was XX and our report time interval has been set to XXX. 
-
-%\begin{figure}[h]
-%\centering
-%\includegraphics[scale=0.3]{img/asdf.png}
-%\caption{asdf}
-%\label{fig:diagram1}
-%\end{figure}
-
-
+The following diagram (figure \ref{fig:diagram1.png}) shows an example of the evolution progress, with and without neuromodulators. As aggression potential we took a random value from the range of 0.3 to 0.8 for each episode. It is impotant to mention that this graph is not representative as it is just the product of a single evolution run.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{img/evoAvg.jpg}
+\caption{evo}
+\label{fig:diagram1}
+\end{figure}
 
 \subsection{Performance}
 

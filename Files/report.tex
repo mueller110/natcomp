@@ -12,6 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
+\usepackage{float}
 % added this package solely because "our" title is way too long and it
 % allows to add a line break in the title
 %\usepackage[usestackEOL]{stackengine}
@@ -194,30 +195,42 @@ For the results we evolved two robots, distinguished by the usage of neuromodula
 The following diagram (figure \ref{fig:diagram1}) shows an example of the evolution progress, with and without neuromodulators. As aggression potential we took a random value from the range of 0.3 to 0.8 for each episode. It is impotant to mention that this graph is not representative as it is just the product of a single evolution run.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{img/evoAvg.jpg}
+\includegraphics[scale=0.7]{img/evoAvg.jpg}
 \caption{evo}
 \label{fig:diagram1}
 \end{figure}
 
+The x-axis shows the number of generations and the y-axis represents the fitness reached.
+
 \subsection{Performance}
+We tested two of our evolved robots. The following diagrams compare the performance of the robot without neuromodulators (1) with neuromodulators (2). Diagram diagram (figure \ref{fig:diagram2}) shows the distance between the robot and the ghost, when the robot is dopping pegs. The robot should drot pegs only as a last resort, when it is attaced by the ghost. So we assume, that this distance as a good indicator of the robots performance.
 
-
-
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/distdrop_plot.png}
 \caption{Average Distance}
-\label{fig:Average Distance}
+\label{fig:diagram2}
 \end{figure}
 
-\begin{figure}[h]
+The secon diagram \ref{fig:diagram3}) shows the total count of drpped pegs on the way to the spot. Our robot without neuromodulators drops 100\% of all pegs, the other one only view.
+
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/pegdrop_plot.png}
 \caption{Pegs dropped}
-\label{fig:Pegs dropped}
+\label{fig:diagram3}
 \end{figure}
 
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/dose_plot.png}
+\caption{Activation of neuromodulators}
+\label{fig:diagram4}
+\end{figure}
+
+
+\newpage
 
 \section{Conclusion}
 %By evolving and comparing those two robots with our implemented task, we noticed a positive %influence not only in performance, but also in the evolution, as we hoped to achieve.
@@ -245,9 +258,6 @@ Our new signal function:
 \bibitem{haykin}Simon Haykin {\em Neural Networks and Learning Machines} 2009: Pearson Education, Inc..
 \bibitem{thesis}Esther Lo {\em Master Thesis: Neuromodulation in Artificial Systems} 2012: University of Oklahoma.
 \end{thebibliography}
-
-
-\section{Appendix}
 
 
 \end{document}

@@ -34,54 +34,6 @@
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 
 
-
-
-
-
-
-
-
-
-
-%definitions for xml-syntax highleiting
-\usepackage{listings}
-
-\usepackage{color}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
-\definecolor{cyan}{rgb}{0.0,0.6,0.6}
-
-\lstset{
-basicstyle=\ttfamily,
-columns=fullflexible,
-showstringspaces=false,
-commentstyle=\color{gray}\upshape
-}
-
-\lstdefinelanguage{XML}
-{
-morestring=[b]",
-morestring=[s]{>}{<},
-morecomment=[s]{<?}{?>},
-stringstyle=\color{black},
-identifierstyle=\color{darkblue},
-keywordstyle=\color{cyan},
-morekeywords={xmlns,version,type}% list your attributes here
-}
-%end of definitions for xml-syntax highleiting
-
-
-
-
-
-
-
-
-
-
-
-
-
 \begin{document}
 \begin{titlepage}%Institution
 \vspace{2cm}
@@ -239,7 +191,7 @@ For the results we evolved two robots, distinguished by the usage of neuromodula
 \newpage
 
 \subsection{Evolution}
-The following diagram (figure \ref{fig:diagram1.png}) shows an example of the evolution progress, with and without neuromodulators. As aggression potential we took a random value from the range of 0.3 to 0.8 for each episode. It is impotant to mention that this graph is not representative as it is just the product of a single evolution run.
+The following diagram (figure \ref{fig:diagram1}) shows an example of the evolution progress, with and without neuromodulators. As aggression potential we took a random value from the range of 0.3 to 0.8 for each episode. It is impotant to mention that this graph is not representative as it is just the product of a single evolution run.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{img/evoAvg.jpg}
@@ -248,6 +200,7 @@ The following diagram (figure \ref{fig:diagram1.png}) shows an example of the ev
 \end{figure}
 
 \subsection{Performance}
+
 
 
 \begin{figure}[h]
@@ -286,8 +239,12 @@ Our new signal function:
 \item PS Page: \url{http://www.cosy.sbg.ac.at/~helmut/Teaching/NaturalComputation/proseminar.html}
 \end{itemize}
 
-\bibliography{}  % .bib files here
+%\bibliography{}  % .bib files here
 
+\begin{thebibliography}{1}
+\bibitem{haykin}Simon Haykin {\em Neural Networks and Learning Machines} 2009: Pearson Education, Inc..
+\bibitem{thesis}Esther Lo {\em Master Thesis: Neuromodulation in Artificial Systems} 2012: University of Oklahoma.
+\end{thebibliography}
 
 
 \section{Appendix}
